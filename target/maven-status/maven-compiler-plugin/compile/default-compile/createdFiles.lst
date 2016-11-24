@@ -1,0 +1,5 @@
+br\edu\unirn\dominio\Docente.class
+br\edu\unirn\dominio\Usuario.class
+br\edu\unirn\servlet\SairServlet.class
+br\edu\unirn\seguranca\SegurancaFilter.class
+br\edu\unirn\servlet\LoginServlet.class
