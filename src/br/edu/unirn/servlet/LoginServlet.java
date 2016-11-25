@@ -19,7 +19,7 @@ public class LoginServlet extends HttpServlet {
 		String login = req.getParameter("login");
 		String senha = req.getParameter("senha");
 		
-		if (login.equals("icaro") && senha.equals("123456")){
+		if (login.equals("icaro") && senha.equals("")){
 			Usuario u = new Usuario();
 			u.setNome(login);
 			

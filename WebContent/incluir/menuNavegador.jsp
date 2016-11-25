@@ -1,6 +1,10 @@
 <div class="navbar">
 		<div class="navbar-inner" style="background: #303030">
-			<a class="brand" href="login.jsp">Logar</a>
+			<% if (session.getAttribute("usuario") == null) {%>
+				<a class="brand" href="/ExemploWeb1/login.jsp">Logar</a>
+			<% } else { %>
+				<a class="brand" href="#">Logado</a>
+			<%} %>
 			<ul class="nav">
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-target="#">
@@ -9,28 +13,32 @@
 					</a>
 					<ul class="dropdown-menu">
 						<li><a href="paginas/cadastroDocente.jsp">Cadastrar Docente</a></li>
-						<li><a href="#">Cadastrar Disciplina</a></li>
-						<li><a href="#">link2</a></li>
-						<li class="dropdown-submenu">
-							<a href="#">
-								Submenu
-							</a>
-							<ul class="dropdown-menu">
-								<li><a href="#myModal" data-toggle="modal">link4</a></li>
-								<li><a href="testando2.html">link5</a></li>
-							</ul>
-						</li>
-						<li><a href="#">link3</a></li>
+						<li><a href="paginas/cadastroDisciplina.jsp">Cadastrar Disciplina</a></li>
+<!-- 						<li><a href="#">link2</a></li> -->
+<!-- 						<li class="dropdown-submenu"> -->
+<!-- 							<a href="#"> -->
+<!-- 								Submenu -->
+<!-- 							</a> -->
+<!-- 							<ul class="dropdown-menu"> -->
+<!-- 								<li><a href="#myModal" data-toggle="modal">link4</a></li> -->
+<!-- 								<li><a href="testando2.html">link5</a></li> -->
+<!-- 							</ul> -->
+<!-- 						</li> -->
+<!-- 						<li><a href="#">link3</a></li> -->
 					</ul>
 				</li>
+<!-- 				<li> -->
+<!-- 					<a href="#">Link</a> -->
+<!-- 				</li> -->
+<!-- 				<li> -->
+<!-- 					<a href="#">Link</a> -->
+<!-- 				</li> -->
 				<li>
-					<a href="#">Link</a>
-				</li>
-				<li>
-					<a href="#">Link</a>
-				</li>
-				<li>
-					<a href="#myModal" data-toggle="modal">Sair</a>
+					<% if (session.getAttribute("usuario") != null) {%>
+						<a href="#myModal" data-toggle="modal">Sair</a>
+					<% } else { %>
+						<a href="#">Sair</a>
+					<%} %>
 				</li>
 			</ul>
 		</div>

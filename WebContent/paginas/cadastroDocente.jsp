@@ -9,12 +9,14 @@
 	<script src="http://code.jquery.com/jquery.js"></script>
 	<script src="/ExemploWeb1/bootstrap/js/bootstrap.min.js"></script>
 </head>
-<body>
-
+<body style="background: #AAAAAA">
+	<h1></h1>
+	<%@include file="/incluir/menuNavegador.jsp" %>
+	
 <form action="/ExemploWeb1/cadastrarDocente" method="post">
 	<fieldset>
 		<table>
-			<caption style="background-color: red;">Dados gerais</caption>
+			<caption style="background-color: #EEEEEE;">Dados gerais</caption>
 				<tbody>
 					<tr>
 						<th>Nome:</th>
@@ -22,12 +24,12 @@
 					</tr>
 					<tr>
 						<th>Data Nascimento:</th>
-						<th><input type="text" placeholder="data de nascimento"
+						<th><input type="text" placeholder="dd/mm/aaaa"
 							name="dtNascimento" id="nascimento" onkeyup="editar()" maxlength="10"/></th>
 					</tr>
 					<tr>
 						<th>CPF:</th>
-						<th><input type="text" placeholder="cpf" name="cpf"
+						<th><input type="text" placeholder="xxxxxxxxxxx" name="cpf"
 							maxlength="11" /></th>
 					</tr>
 					<tr>
@@ -45,7 +47,7 @@
 					</tr>
 					<tr>
 						<th>Numero:</th>
-						<th><input type="text" placeholder="número" name="numero" maxlength="11"/></th>
+						<th><input type="text" placeholder="DDNNNNNNNNN" name="numero" maxlength="11"/></th>
 					</tr>
 					<tr>
 						<td colspan="2">

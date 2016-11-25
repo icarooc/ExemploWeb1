@@ -48,9 +48,9 @@ public class CadastrarDocenteServlet extends HttpServlet {
 		docente.setEndereco(endereco);
 		docente.setNumero(numero);
 		
-		req.setAttribute("docente", docente);
+		req.getSession().setAttribute("docente", docente);
 		
-		resp.sendRedirect("/ExemploWeb1/tela2.jsp");
+		resp.sendRedirect("/ExemploWeb1/paginas/visualizarDocente.jsp");
 	}
 
 }
