@@ -6,6 +6,7 @@
 				<a class="brand" href="#">Logado</a>
 			<%} %>
 			<ul class="nav">
+			<% if (session.getAttribute("usuario") != null) {%>
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-target="#">
 						Cadastro
@@ -14,25 +15,9 @@
 					<ul class="dropdown-menu">
 						<li><a href="paginas/cadastroDocente.jsp">Cadastrar Docente</a></li>
 						<li><a href="paginas/cadastroDisciplina.jsp">Cadastrar Disciplina</a></li>
-<!-- 						<li><a href="#">link2</a></li> -->
-<!-- 						<li class="dropdown-submenu"> -->
-<!-- 							<a href="#"> -->
-<!-- 								Submenu -->
-<!-- 							</a> -->
-<!-- 							<ul class="dropdown-menu"> -->
-<!-- 								<li><a href="#myModal" data-toggle="modal">link4</a></li> -->
-<!-- 								<li><a href="testando2.html">link5</a></li> -->
-<!-- 							</ul> -->
-<!-- 						</li> -->
-<!-- 						<li><a href="#">link3</a></li> -->
 					</ul>
 				</li>
-<!-- 				<li> -->
-<!-- 					<a href="#">Link</a> -->
-<!-- 				</li> -->
-<!-- 				<li> -->
-<!-- 					<a href="#">Link</a> -->
-<!-- 				</li> -->
+			<% } %>
 				<li>
 					<% if (session.getAttribute("usuario") != null) {%>
 						<a href="#myModal" data-toggle="modal">Sair</a>
