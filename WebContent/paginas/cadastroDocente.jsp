@@ -51,7 +51,7 @@
 					</tr>
 					<tr>
 						<td colspan="2">
-							<input type="submit" class="btn btn-success" value="Salvar"/>
+							<input type="submit" class="btn btn-success" value="Salvar"/>							
 						</td>
 					</tr>
 				</tbody>

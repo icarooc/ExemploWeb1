@@ -17,14 +17,12 @@
 						<li><a href="paginas/cadastroDisciplina.jsp">Cadastrar Disciplina</a></li>
 					</ul>
 				</li>
-			<% } %>
-				<li>
-					<% if (session.getAttribute("usuario") != null) {%>
-						<a href="#myModal" data-toggle="modal">Sair</a>
-					<% } else { %>
-						<a href="#">Sair</a>
-					<%} %>
+				
+				<li>					
+					<a href="#myModal" data-toggle="modal">Sair</a>
 				</li>
+				
+			<% } %>			
 			</ul>
 		</div>
 	</div>

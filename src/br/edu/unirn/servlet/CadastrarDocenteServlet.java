@@ -24,6 +24,7 @@ public class CadastrarDocenteServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
 		DateFormat formatador = new SimpleDateFormat("dd/MM/yyyy");
+		boolean erro = false;
 		
 		Date dtNascimento;
 		try {
@@ -32,25 +33,37 @@ public class CadastrarDocenteServlet extends HttpServlet {
 			dtNascimento = new Date();
 		}
 		
-		String nome = (String) req.getParameter("nome");
-		Long cpf = Long.parseLong((String) req.getParameter("cpf"));
-		Long rg = Long.parseLong((String) req.getParameter("rg"));
-		String titulacao = (String) req.getParameter("titulacao");
-		String endereco = (String) req.getParameter("endereco");
-		String numero = (String) req.getParameter("numero");
+		Long cpf = null;
+		Long rg = null;
+		try  {
+			cpf = Long.parseLong((String) req.getParameter("cpf"));
+			rg = Long.parseLong((String) req.getParameter("rg"));
+		} catch (NumberFormatException e){
+			erro = true;
+		}
 		
-		Docente docente = new Docente();
-		docente.setNome(nome);
-		docente.setDataNascimento(dtNascimento);
-		docente.setCpf(cpf);
-		docente.setRg(rg.intValue());
-		docente.setTitulacao(titulacao);
-		docente.setEndereco(endereco);
-		docente.setNumero(numero);
+		if (erro){
+			resp.sendRedirect("/ExemploWeb1/paginas/cadastroDocente.jsp");
+		} else {
+			
+			String nome = (String) req.getParameter("nome");
+			String titulacao = (String) req.getParameter("titulacao");
+			String endereco = (String) req.getParameter("endereco");
+			String numero = (String) req.getParameter("numero");
+			
+			Docente docente = new Docente();
+			docente.setNome(nome);
+			docente.setDataNascimento(dtNascimento);
+			docente.setCpf(cpf);
+			docente.setRg(rg.intValue());
+			docente.setTitulacao(titulacao);
+			docente.setEndereco(endereco);
+			docente.setNumero(numero);
+			
+			req.getSession().setAttribute("docente", docente);		
+			resp.sendRedirect("/ExemploWeb1/paginas/visualizarDocente.jsp");
+		}
 		
-		req.getSession().setAttribute("docente", docente);
-		
-		resp.sendRedirect("/ExemploWeb1/paginas/visualizarDocente.jsp");
 	}
 
 }
